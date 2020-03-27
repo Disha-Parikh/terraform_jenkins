@@ -8,12 +8,12 @@
 	 }
 
 	 stage('Set Terraform path') {
-	 steps {
-	 script {
-	 echo "HEllo"
-	 def tfHome = tool name: 'Terraform'
-	 env.PATH = "${tfHome}:${env.PATH}"
-	 echo "REACHED HERE!"
+         steps {
+         script {
+         echo "HEllo"
+         def tfHome = tool name: 'Terraform'
+         env.PATH = "${tfHome}:${env.PATH}"
+         echo "REACHED HERE!"
 	 }
 	 sh 'terraform —version'
 
