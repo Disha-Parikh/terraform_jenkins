@@ -12,6 +12,7 @@
             script {
             echo "HEllo"
             def tfHome = tool name: 'Terraform'
+            echo "${tfHome}"
             env.PATH = "${tfHome}:${env.PATH}"
             echo "REACHED HERE!"
      }
