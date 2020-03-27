@@ -2,7 +2,7 @@
 	 agent any
 
 	 stages {
-	 stage(‘checkout’) {
+	 stage('checkout') {
 	 steps {
 	 git branch: ‘master’, url: 'https://github.com/Disha-Parikh/terraform_jenkins.git'}
 	 }
