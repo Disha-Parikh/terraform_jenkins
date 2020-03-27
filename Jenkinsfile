@@ -23,7 +23,7 @@ pipeline {
  stage(‘Provision infrastructure’) {
 
  steps {
- dir(‘dev’)
+ dir(‘terraform_jenkins’)
  {
  sh ‘terraform init’
  sh ‘terraform plan -out=plan’
