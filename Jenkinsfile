@@ -11,6 +11,7 @@
 	 script {
 	 def tfHome = tool name: 'Terraform'
 	 env.PATH = "${tfHome}:${env.PATH}"
+	 echo "REACHED HERE!"
 	 }
 	 sh 'terraform —version'
 
