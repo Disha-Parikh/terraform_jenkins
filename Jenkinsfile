@@ -24,16 +24,14 @@
 	 stage("Provision infrastructure") {
 
 	 steps {
-	 dir('terraform_jenkins')
-	 {
-	 git clone
-	 sh 'terraform init'
-	 sh 'terraform plan -out=plan'
-	 sh 'terraform apply plan'
-	 }
-
-
-	 }
+         dir('terraform_jenkins')
+         {
+         git clone
+         sh 'terraform init'
+         sh 'terraform plan -out=plan'
+         sh 'terraform apply plan'
+         }
+        }
 	 }
 
 
