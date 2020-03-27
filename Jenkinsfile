@@ -11,7 +11,7 @@
             steps {
             script {
             echo "HEllo"
-            def tfHome = tool name: 'Terraform'
+            def tfHome = tool name: 'Terraform' , type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
             echo "${tfHome}"
             env.PATH = "${tfHome}:${env.PATH}"
             echo "REACHED HERE!"
