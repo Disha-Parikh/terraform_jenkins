@@ -14,7 +14,7 @@
 	 stage("Provision infrastructure") {
 
 	 steps {
-	     tool name: 'terraform'
+	     tool name: 'Terraform'
          sh 'terraform init'
          sh 'terraform plan -out=plan'
          sh 'terraform apply plan'
