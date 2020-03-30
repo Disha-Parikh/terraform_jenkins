@@ -12,8 +12,9 @@
 
 
 	 stage("Provision infrastructure") {
-        tool name: 'terraform', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
+
 	 steps {
+	     tool name: 'terraform', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
          sh 'terraform init'
          sh 'terraform plan -out=plan'
          sh 'terraform apply plan'
