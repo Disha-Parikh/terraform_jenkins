@@ -11,8 +11,9 @@
            steps {
            script {
            echo "HEllo"
-           def tfHome = tool name: 'Terraform'
            echo "${env.PATH}"
+           def tfHome = tool name: 'Terraform'
+
            env.PATH = "${tfHome}:${env.PATH}"
            echo "REACHED HERE!"
     }
