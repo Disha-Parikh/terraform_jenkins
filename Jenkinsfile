@@ -14,7 +14,7 @@
 	 stage("Provision infrastructure") {
 	 steps {
          sh 'terraform init'
-         sh 'terraform plan -out=plan'
+         sh 'TF_VAR_access_key=${env.AWS_ACCESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY}terraform plan -out=plan'
          sh 'terraform apply plan'
          }
         }
