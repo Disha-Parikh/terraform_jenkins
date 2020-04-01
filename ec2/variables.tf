@@ -5,3 +5,5 @@ variable "private_subnet" {}
 variable "sg" {}
 variable "public_subnet" {}
 variable "public_az" {}
+variable "key_name" {}
+variable "public_key_path" {}

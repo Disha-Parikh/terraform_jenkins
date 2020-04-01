@@ -9,13 +9,23 @@ resource "aws_instance" "private_instance" {
   }
 }
 
+resource "aws_key_pair" "key_pair" {
+  key_name = var.key_name
+  public_key = file(var.public_key_path)
+
+}
+
+
 resource "aws_instance" "public_instance" {
   ami = var.ami
   instance_type = var.instance_type
   availability_zone = var.public_az
   subnet_id = var.public_subnet
   security_groups = [var.sg]
+  key_name = aws_key_pair.key_pair.key_name
   tags={
     Name = "Public Instance"
   }
 }
+
+

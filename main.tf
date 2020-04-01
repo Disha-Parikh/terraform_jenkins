@@ -13,6 +13,8 @@ module "ec2"{
   public_az = var.public_az
   public_subnet = module.vpc.public_subnet
   sg = module.vpc.sg
+  key_name = var.key_name
+  public_key_path = var.path
 
 
 }

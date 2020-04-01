@@ -8,3 +8,5 @@ variable "public_cidr" {}
 variable "vpc_cidr" {}
 variable "access_key" {}
 variable "secret" {}
+variable "key_name" {}
+variable "path" {}
