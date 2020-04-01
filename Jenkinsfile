@@ -16,6 +16,13 @@
          sh 'terraform init'
          sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} terraform plan -out=plan"
          sh 'terraform apply plan'
+            script{
+               def INPUT_PARAMS = input message: 'Please Provide Parameters', ok: 'Next',
+                                                    parameters: [
+                                                    input(name: 'ENVIRONMENT', description: 'Please select the Environment')]
+                echo ${INPUT_PARAMS}
+
+            }
          sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} terraform destroy -auto-approve'
          }
         }
