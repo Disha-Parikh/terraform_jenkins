@@ -18,13 +18,18 @@
          sh 'terraform apply plan'
             script{
               def userinput = input(
-                id: 'userInput', message: 'Let\'s promote?', parameters: [
-                [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env']
+                id: 'userInput', message: 'Do you want to destroy existing infrastructure?', parameters: [
+                [$class: 'TextParameterDefinition', defaultValue: 'no', description: 'Environment', name: 'Opinion']
                ])
                 echo (userinput)
 
             }
-         sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} terraform destroy -auto-approve'
+            if(userinput=="yes"){
+                         sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} terraform destroy -auto-approve'
+            }
+            else{
+                echo "Infrastructure stands as it is!"
+            }
          }
         }
 	 }
