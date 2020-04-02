@@ -19,13 +19,15 @@
                ])
                 echo (userinput)
 
+                if(userinput=="yes"){
+                                         sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} terraform destroy -auto-approve'
+                            }
+                            else{
+                                echo "Infrastructure stands as it is!"
+                            }
+
             }
-            if(userinput=="yes"){
-                         sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} terraform destroy -auto-approve'
-            }
-            else{
-                echo "Infrastructure stands as it is!"
-            }
+
          }
         }
 	 }
