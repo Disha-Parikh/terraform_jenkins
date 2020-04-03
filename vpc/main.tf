@@ -29,7 +29,7 @@ resource "aws_security_group" "custom_sg" {
   }
 }
 
-resource "aws_subnet" "private_subnet" {
+/*resource "aws_subnet" "private_subnet" {
   cidr_block = var.private_cidr
   vpc_id = "${aws_vpc.custom_vpc.id}"
   map_public_ip_on_launch = false
@@ -37,7 +37,7 @@ resource "aws_subnet" "private_subnet" {
   tags={
     Name = "Private Subnet"
   }
-}
+}*/
 
 resource "aws_subnet" "public_subnet" {
   cidr_block = var.public_cidr
