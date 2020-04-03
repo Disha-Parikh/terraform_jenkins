@@ -9,7 +9,6 @@ module "ec2"{
   ami = var.ami
   instance_type = var.instance_type
   private_az = var.private_az
-  private_subnet = module.vpc.private_subnet
   public_az = var.public_az
   public_subnet = module.vpc.public_subnet
   sg = module.vpc.sg
