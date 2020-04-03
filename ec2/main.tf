@@ -1,13 +1,3 @@
-resource "aws_instance" "private_instance" {
-  ami = var.ami
-  instance_type = var.instance_type
-  availability_zone = var.private_az
-  subnet_id = var.private_subnet
-  security_groups = [var.sg]
-  tags={
-    Name = "Private Instance"
-  }
-}
 
 resource "aws_key_pair" "key_pair" {
   key_name = var.key_name
@@ -23,6 +13,10 @@ resource "aws_instance" "public_instance" {
   subnet_id = var.public_subnet
   security_groups = [var.sg]
   key_name = aws_key_pair.key_pair.key_name
+  provisioner "file" {
+    source = "install.sh"
+    destination = "/tmp/install.sh"
+  }
   tags={
     Name = "Public Instance"
   }

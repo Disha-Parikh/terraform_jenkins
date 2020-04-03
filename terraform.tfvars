@@ -1,5 +1,5 @@
 region = "ap-south-1"
-ami = "ami-54d2a63b"
+ami = "ami-03b5297d565ef30a6"
 instance_type = "t2.micro"
 vpc_cidr = "10.0.0.0/16"
 
