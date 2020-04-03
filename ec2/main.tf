@@ -18,6 +18,7 @@ resource "aws_instance" "public_instance" {
     destination = "/tmp/install.sh"
   }
   provisioner "remote-exec" {
+
     inline = ["chmod +x /tmp/install.sh",
             "./tmp/install.sh"]
   }
