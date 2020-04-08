@@ -14,7 +14,10 @@ module "ec2"{
   sg = module.vpc.sg
   key_name = var.key_name
   public_key_path = var.path
+<<<<<<< HEAD
   private_key = var.private_key
+=======
+>>>>>>> 35fa2d1ac955eb41412ec3d67f84b60ad1da26fa
 
 
 }
