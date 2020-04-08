@@ -14,6 +14,11 @@ resource "aws_instance" "public_instance" {
   provisioner "file" {
     source = "install.sh"
     destination = "/tmp/install.sh"
+    connection {
+      user = "ec2-user"
+      private_key = var.private_key
+      host = aws_instance.public_instance.public_ip
+    }
   }
   provisioner "remote-exec" {
 
