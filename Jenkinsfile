@@ -10,7 +10,11 @@
 	 stage("Provision infrastructure") {
 	 steps {
          sh 'terraform init'
-         sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=${private_key} terraform plan -out=plan"
+          withCredentials([file(credentialsId: 'private_key', variable:'private_key')])
+          {
+                     sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=$private_key terraform plan -out=plan"
+
+          }
          sh 'terraform apply plan'
 
             script{
@@ -21,7 +25,7 @@
                 echo (userinput)
 
                 if(userinput=="yes"){
-                                         sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=${private_key}  terraform destroy -auto-approve'
+                                         sh 'TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=$private_key  terraform destroy -auto-approve'
                             }
                             else{
                                 echo "Infrastructure stands as it is!"
@@ -36,3 +40,6 @@
 
 
 	 }
+
+
+
