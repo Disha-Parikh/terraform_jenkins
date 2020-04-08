@@ -12,6 +12,5 @@ variable "key_name" {}
 
 variable "path" {}
 variable "private_key" {
-  type = string
 }
 
