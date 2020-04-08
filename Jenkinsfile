@@ -10,12 +10,13 @@
 	 stage("Provision infrastructure") {
 	 steps {
          sh 'terraform init'
-          withCredentials([file(credentialsId: 'private_key', variable:'private_key')])
-          {
-                    echo (private_key)
-                     sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=$private_key terraform plan -out=plan"
+      withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'private_key', \
+                                                   keyFileVariable: 'key', \
+                                                   passphraseVariable: '', \
+                                                   usernameVariable: '')]) {
+                    sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=$private_key terraform plan -out=plan"
 
-          }
+         }
          sh 'terraform apply plan'
 
             script{
