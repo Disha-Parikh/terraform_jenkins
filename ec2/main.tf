@@ -18,13 +18,12 @@ resource "aws_instance" "public_instance" {
     destination = "/tmp/install.sh"
   }
   provisioner "remote-exec" {
-<<<<<<< HEAD
+
     connection {
       user = "ec2-user"
       private_key = var.private_key
     }
-=======
->>>>>>> 35fa2d1ac955eb41412ec3d67f84b60ad1da26fa
+
 
     inline = ["chmod +x /tmp/install.sh",
             "./tmp/install.sh"]
