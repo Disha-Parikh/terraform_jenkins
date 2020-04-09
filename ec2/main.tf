@@ -16,7 +16,7 @@ resource "aws_instance" "public_instance" {
     destination = "/tmp/install.sh"
     connection {
       user = "ec2-user"
-      private_key = var.private_key
+      private_key = file(var.private_key)
       host = aws_instance.public_instance.public_ip
     }
   }
