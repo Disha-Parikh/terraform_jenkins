@@ -15,8 +15,10 @@
                                                    passphraseVariable: '', \
                                                    usernameVariable: '')]) {
          sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=key terraform plan -out=plan"
+         echo (key)
 
          }
+
          sh 'terraform apply plan'
 
             script{
