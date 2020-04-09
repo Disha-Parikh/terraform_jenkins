@@ -14,8 +14,6 @@
                echo (FILE)
              }
 
-         sh 'terraform apply plan'
-
             script{
               def userinput = input(
                 id: 'userInput', message: 'Do you want to destroy existing infrastructure?', parameters: [
