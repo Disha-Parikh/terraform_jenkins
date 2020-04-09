@@ -16,7 +16,7 @@
 
              withCredentials([file(credentialsId: 'key', variable: 'FILE')]) {
                            echo (FILE)
-                           cat ${FILE} > aws_key.pem
+                           cat FILE > aws_key.pem
                            sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY} TF_VAR_private_key=aws_key.pem terraform plan -out=plan"
               }
               sh 'terraform apply plan'
