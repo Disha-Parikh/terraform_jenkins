@@ -11,6 +11,5 @@ variable "secret" {}
 variable "key_name" {}
 
 variable "path" {}
-variable "private_key" {
-}
+
 

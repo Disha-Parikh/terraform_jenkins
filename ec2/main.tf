@@ -16,7 +16,6 @@ resource "aws_instance" "public_instance" {
     destination = "/tmp/install.sh"
     connection {
       user = "ec2-user"
-      private_key = var.private_key
       host = aws_instance.public_instance.public_ip
     }
   }
@@ -24,7 +23,6 @@ resource "aws_instance" "public_instance" {
 
     connection {
       user = "ec2-user"
-      private_key = var.private_key
       host = aws_instance.public_instance.public_ip
     }
 
