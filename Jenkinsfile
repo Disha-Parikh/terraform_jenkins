@@ -11,7 +11,7 @@
 	 steps {
          sh 'terraform init'
          withCredentials([file(credentialsId: 'key', variable: 'FILE')]) {
-               echo ($FILE)
+               echo (FILE)
              }
 
          sh 'terraform apply plan'
