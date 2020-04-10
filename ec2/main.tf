@@ -17,7 +17,7 @@ resource "aws_instance" "public_instance" {
     connection {
       user = "ec2-user"
       host = aws_instance.public_instance.public_ip
-      private_key = file("./aws_key")
+      private_key = file("./aws_key.pub")
     }
   }
   provisioner "remote-exec" {
