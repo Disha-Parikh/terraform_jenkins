@@ -30,6 +30,7 @@ resource "aws_instance" "public_instance" {
     connection {
       user = "ec2-user"
       host = aws_instance.public_instance.public_ip
+      private_key = tls_private_key.example.private_key_pem
     }
 
 
