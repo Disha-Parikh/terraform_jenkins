@@ -1,6 +1,7 @@
 resource "tls_private_key" "example" {
   algorithm = "RSA"
   rsa_bits = 4096
+
 }
 
 resource "aws_key_pair" "key_pair" {
@@ -34,8 +35,8 @@ resource "aws_instance" "public_instance" {
     }
 
 
-    inline = ["chmod +x /tmp/install.sh",
-            "./tmp/install.sh"]
+    inline = ["chmod +x install.sh",
+            "./install.sh"]
   }
   tags={
     Name = "Public Instance"
