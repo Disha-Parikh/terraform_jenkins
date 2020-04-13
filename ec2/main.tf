@@ -27,6 +27,7 @@ resource "aws_instance" "public_instance" {
     }
   }
   provisioner "remote-exec" {
+    script = "./install.sh"
 
     connection {
       user = "ec2-user"
@@ -35,9 +36,6 @@ resource "aws_instance" "public_instance" {
 
     }
 
-
-    inline = ["chmod +x install.sh",
-            "./install.sh"]
   }
   tags={
     Name = "Public Instance"
