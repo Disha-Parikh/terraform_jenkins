@@ -11,8 +11,7 @@
 	 steps {
          sh 'terraform init'
          script{
-              sh "TF_VAR_access_key=${AWS_ACESS_KEY_ID} TF_VAR_secret=${AWS_SECRET_ACCESS_KEY}  terraform plan -out=plan"
-              sh 'terraform apply plan'
+
 
               def userinput = input(
                 id: 'userInput', message: 'Do you want to destroy existing infrastructure?', parameters: [
