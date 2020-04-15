@@ -5,6 +5,6 @@ sudo usermod -a -G docker ec2-user
 echo "VERSION"
 sudo docker --version
 sudo docker login -p ${docker}
-sudo docker pull finalflask
+sudo docker pull dishaparikh98/finalflask
 sudo docker images
 sudo docker run dishaparikh98/finalflask -d
