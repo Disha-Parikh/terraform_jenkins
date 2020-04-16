@@ -1,4 +1,3 @@
-sudo yum update -y
 sudo amazon-linux-extras install docker -y
 sudo yum install -y postgresql
 echo "CREATE ROLE postgres LOGIN ENCRYPTED PASSWORD 'einfochips';" | sudo -u postgres psql
