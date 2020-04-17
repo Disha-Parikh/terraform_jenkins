@@ -1,6 +1,5 @@
 sudo amazon-linux-extras install docker -y
 sudo yum install -y postgresql
-sudo adduser postgres
 sudo -u postgres psql
 su postgres -c "createdb db1 --owner postgres"
 sudo service postgresql reload
