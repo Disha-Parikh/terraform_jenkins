@@ -29,6 +29,12 @@ resource "aws_security_group" "custom_sg" {
     to_port = 5002
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    from_port = 5432
+    protocol = "tcp"
+    to_port = 5432
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   tags={
     name = "ssh-http"
