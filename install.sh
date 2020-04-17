@@ -1,8 +1,9 @@
 sudo amazon-linux-extras install docker -y
-sudo yum install -y postgresql
-sudo -u postgres psql
-su postgres -c "createdb db1 --owner postgres"
-sudo service postgresql reload
+sudo amazon-linux-extras install postgresql10 vim epel -y
+sudo yum install -y postgresql-server postgresql-devel
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
+su - postgres
 sudo service docker start
 sudo service postgresql status > abcd.txt
 cat abcd.txt
