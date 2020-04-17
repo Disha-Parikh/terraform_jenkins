@@ -4,6 +4,8 @@ sudo -u postgres psql
 su postgres -c "createdb db1 --owner postgres"
 sudo service postgresql reload
 sudo service docker start
+sudo service postgresql status > abcd.txt
+cat abcd.txt
 sudo usermod -a -G docker ec2-user
 echo "VERSION"
 sudo docker --version
