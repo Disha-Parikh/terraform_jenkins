@@ -1,7 +1,6 @@
 sudo amazon-linux-extras install docker postgresql10 vim epel -y
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
-su - postgres
 sudo service docker start
 sudo service postgresql status > abcd.txt
 cat abcd.txt
