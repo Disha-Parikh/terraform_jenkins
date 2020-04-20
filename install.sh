@@ -3,6 +3,7 @@ sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo service docker start
 sudo service postgresql status > abcd.txt
+echo "HELLO"
 cat abcd.txt
 sudo usermod -a -G docker ec2-user
 echo "VERSION"
