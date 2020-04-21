@@ -28,7 +28,7 @@
             script{
               def userinput = input(
                 id: 'userInput', message: 'Do you want to destroy existing infrastructure?', parameters: [
-                [$class: 'TextParameterDefinition', defaultValue: 'no', description: 'Environment', name: 'Opinion']
+                [$class: 'TextParameterDefinition', defaultValue: 'yes', description: 'Environment', name: 'Opinion']
                ])
                 echo (userinput)
 
