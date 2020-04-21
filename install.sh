@@ -6,7 +6,8 @@ sudo systemctl start postgresql
 sudo service docker start
 sudo service postgresql status
 echo "HELLO"
-sudo cat /var/lib/pgsql10/data/postgresql.conf
+sudo cat /var/lib/pgsql/data/postgresql.conf
+
 sudo usermod -a -G docker ec2-user
 echo "VERSION"
 sudo docker --version
