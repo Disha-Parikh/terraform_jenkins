@@ -1,5 +1,6 @@
 sudo amazon-linux-extras install docker postgresql10 vim epel -y
 sudo yum install -y postgresql-server postgresql-devel
+sudo /usr/bin/postgresql-setup –-initdb
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo service docker start
