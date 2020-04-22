@@ -3,7 +3,7 @@ sudo yum install -y postgresql-server postgresql-devel
 sudo service postgresql initdb
 echo "OHH"
 sudo sed -i 's/#listen address=/listen address=5432/1' /var/lib/pgsql/data/pg_hba.conf
-cat /var/lib/pgsql/data/pg_hba.conf
+sudo cat /var/lib/pgsql/data/pg_hba.conf
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo service docker start
