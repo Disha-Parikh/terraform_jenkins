@@ -1,12 +1,12 @@
 sudo amazon-linux-extras install docker -y
 sudo yum install -y postgresql-server postgresql-devel
 sudo service postgresql initdb
+sudo sed -i 's/#listen address=/listen address=5432/1' /var/lib/pgsql/data/pg_hba.conf
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo service docker start
 sudo service postgresql status
 echo "HELLO"
-sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo usermod -a -G docker ec2-user
 echo "VERSION"
 sudo docker --version
