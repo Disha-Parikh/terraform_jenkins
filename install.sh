@@ -19,4 +19,4 @@ sudo docker login -u dishaparikh98 -p ${docker}
 sudo docker pull dishaparikh98/finalflask:2c25611
 sudo docker images ps
 sudo docker run dishaparikh98/finalflask:2c25611 -d
-sudo docker containers ps
+sudo docker container ps
