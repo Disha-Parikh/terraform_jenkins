@@ -4,7 +4,7 @@ sudo service postgresql initdb
 echo "OHH"
 sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses='localhost'/1" /var/lib/pgsql/data/postgresql.conf
-sudo sed -i "s/#port = '5432'/port='5432'/1" /var/lib/pgsql/data/postgresql.conf
+sudo sed -i "s/#port = 5432/port=5432/1" /var/lib/pgsql/data/postgresql.conf
 echo "SDFASFDAF"
 sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo systemctl enable postgresql
