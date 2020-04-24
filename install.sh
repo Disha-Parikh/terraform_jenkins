@@ -3,6 +3,7 @@ sudo yum install -y postgresql-server postgresql-devel
 sudo service postgresql initdb
 echo "OHH"
 sudo sed -i "s/[#]listen_addresses=[']/listen_addresses=\'localhost/1" /var/lib/pgsql/data/postgresql.conf
+sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo service docker start
