@@ -1,7 +1,9 @@
 sudo amazon-linux-extras install docker -y
 sudo yum install -y postgresql-server postgresql-devel
 sudo service postgresql initdb
+echo "VALUE"
 value=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+echo $value
 echo "OHH"
 sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses=$value/1" /var/lib/pgsql/data/postgresql.conf
