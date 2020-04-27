@@ -1,21 +1,13 @@
-sudo amazon-linux-extras install docker-compose -y
-sudo yum install -y postgresql-server postgresql-devel
-sudo service postgresql initdb
-echo "VALUE"
-echo "OHH"
-sudo cat /var/lib/pgsql/data/postgresql.conf
-sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses='localhost'/1" /var/lib/pgsql/data/postgresql.conf
-sudo sed -i "s/#port = 5432/port=5432/1" /var/lib/pgsql/data/postgresql.conf
-sudo service postgresql restart
-echo "SDFASFDAF"
-sudo cat /var/lib/pgsql/data/postgresql.conf
-sudo systemctl enable postgresql
+sudo amazon-linux-extras install docker git -y
 sudo service docker start
-sudo service postgresql status
-sudo netstat -tnlp | grep postgre
-echo "HELLO"
-echo "VERSION"
-sudo git pull https://github.com/Disha-Parikh/terraform_jenkins.git -p ${git}
-sudo docker login -u dishaparikh98 -p ${docker}
+echo "DOCKER"
+sudo service docker status
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
+echo "!!!!!!"
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+echo "DOCKER-COMPOSE"
+sudo git clone https://github.com/Disha-Parikh/JenkinsTest.git
+cd JenkinsTest
 sudo docker-compose up -d
 sudo docker-compose ps
