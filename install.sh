@@ -12,3 +12,4 @@ sudo git clone https://github.com/Disha-Parikh/JenkinsTest.git
 cd JenkinsTest
 sudo docker-compose up -d
 sudo docker-compose ps
+echo "END"
