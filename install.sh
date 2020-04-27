@@ -11,6 +11,7 @@ sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo systemctl enable postgresql
 sudo service docker start
 sudo service postgresql status
+sudo netstat -tnlp | grep postgresql
 echo "HELLO"
 sudo usermod -a -G docker ec2-user
 echo "VERSION"
