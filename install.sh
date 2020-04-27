@@ -1,4 +1,4 @@
-sudo amazon-linux-extras install docker -y
+sudo amazon-linux-extras install docker-compose -y
 sudo yum install -y postgresql-server postgresql-devel
 sudo service postgresql initdb
 echo "VALUE"
@@ -14,11 +14,8 @@ sudo service docker start
 sudo service postgresql status
 sudo netstat -tnlp | grep postgre
 echo "HELLO"
-sudo usermod -a -G docker ec2-user
 echo "VERSION"
-sudo docker --version
+sudo git pull https://github.com/Disha-Parikh/terraform_jenkins.git -p ${git}
 sudo docker login -u dishaparikh98 -p ${docker}
-sudo docker pull dishaparikh98/finalflask:2c25611
-sudo docker images ps -a
-sudo docker run --name="container1"  -p 5002:5002 dishaparikh98/finalflask:2c25611  -d
-sudo docker container ps -a
+sudo docker-compose up -d
+sudo docker-compose ps
