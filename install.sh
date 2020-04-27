@@ -10,6 +10,11 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 echo "DOCKER-COMPOSE"
 sudo git clone https://github.com/Disha-Parikh/JenkinsTest.git
 cd JenkinsTest
+pwd
 sudo docker-compose up -d
+echo "DB"
+sudo docker logs jenkinstest_db_1
+echo "WEB"
+sudo docker logs jenkinstest_web_1
 sudo docker-compose ps
 echo "END"
