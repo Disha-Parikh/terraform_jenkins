@@ -17,5 +17,5 @@ sudo docker logs jenkinstest_db_1
 echo "WEB"
 sudo docker logs jenkinstest_web_1
 sudo docker-compose ps -a
-sudo netstat -tnlp | grep 5000
+sudo netstat -tnlp
 echo "END"
