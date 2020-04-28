@@ -29,6 +29,12 @@ resource "aws_security_group" "custom_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
+    from_port = 5000
+    protocol = "tcp"
+    to_port = 5000
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
     from_port = 5432
     protocol = "tcp"
     to_port = 5432
