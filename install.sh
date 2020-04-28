@@ -11,6 +11,7 @@ echo "SDFASFDAF"
 sudo cat /var/lib/pgsql/data/postgresql.conf
 sudo systemctl enable postgresql
 sudo service docker start
+echo "STATUS"
 sudo service postgresql status
 sudo netstat -tnlp | grep postgre
 echo "HELLO"
