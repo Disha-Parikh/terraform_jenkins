@@ -1,6 +1,7 @@
 sudo amazon-linux-extras install docker  -y
-sudo yum install git -y
+sudo yum install git httpd -y
 sudo service docker start
+sudo service httpd start
 echo "DOCKER"
 sudo service docker status
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
