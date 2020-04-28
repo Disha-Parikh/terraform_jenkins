@@ -13,10 +13,7 @@ sudo git clone https://github.com/Disha-Parikh/JenkinsTest.git
 cd JenkinsTest
 pwd
 sudo docker-compose up -d
-echo "DB"
-sudo docker-compose logs jenkinstest_db_1
-echo "WEB"
-sudo docker-compose logs jenkinstest_web_1
-sudo docker-compose ps -a
+echo "SERVICES"
+sudo docker-compose ps --services
 sudo netstat -tnlp
 echo "END"
