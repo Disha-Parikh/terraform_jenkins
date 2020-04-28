@@ -1,23 +1,24 @@
-sudo amazon-linux-extras install docker  -y
-sudo yum install git httpd -y
+sudo amazon-linux-extras install docker -y
+sudo yum install -y postgresql-server postgresql-devel
+sudo service postgresql initdb
+echo "VALUE"
+echo "OHH"
+sudo cat /var/lib/pgsql/data/postgresql.conf
+sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses='localhost'/1" /var/lib/pgsql/data/postgresql.conf
+sudo sed -i "s/#port = 5432/port=5432/1" /var/lib/pgsql/data/postgresql.conf
+sudo service postgresql restart
+echo "SDFASFDAF"
+sudo cat /var/lib/pgsql/data/postgresql.conf
+sudo systemctl enable postgresql
 sudo service docker start
-sudo service httpd start
-echo "DOCKER"
-sudo service docker status
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
-echo "!!!!!!"
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-echo "DOCKER-COMPOSE"
-sudo git clone https://github.com/Disha-Parikh/JenkinsTest.git
-cd JenkinsTest
-pwd
-sudo docker-compose build
-sudo docker-compose up -d
-echo "DB"
-sudo docker logs jenkinstest_db_1
-echo "WEB"
-sudo docker logs jenkinstest_web_1
-sudo docker-compose ps -a
-sudo netstat -tnlp
-echo "END"
+sudo service postgresql status
+sudo netstat -tnlp | grep postgre
+echo "HELLO"
+sudo usermod -a -G docker ec2-user
+echo "VERSION"
+sudo docker --version
+sudo docker login -u dishaparikh98 -p ${docker}
+sudo docker pull dishaparikh98/finalflask:2c25611
+sudo docker images ps -a
+sudo docker run --name="container1" --net="bridge" -p 5002:5002 dishaparikh98/finalflask:2c25611  -d
+sudo docker container ps -a
