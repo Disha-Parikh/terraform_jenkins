@@ -3,7 +3,6 @@ sudo yum install git httpd -y
 sudo service docker start
 sudo service httpd start
 echo "DOCKER"
-curl http://169.254.169.254/latest/meta-data/public-ipv4
 echo "????"
 sudo service docker status
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
@@ -17,5 +16,7 @@ pwd
 sudo docker-compose up -d
 echo "SERVICES"
 sudo docker-compose ps --services
+echo "LOGS"
+sudo docker-compose logs web
 sudo netstat -tnlp
 echo "END"
