@@ -3,8 +3,7 @@ sudo yum install git httpd -y
 sudo service docker start
 sudo service httpd start
 echo "DOCKER"
-aws ec2 describe-instances --instance-ids i-0c9c9b44b --query 'Reservations[*].Instances[*].PublicIpAddress' --region ap-south-1 --output text
-cat abcd.txt
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --region ap-south-1 --output text
 echo "?????"
 sudo service docker status
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
