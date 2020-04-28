@@ -11,6 +11,7 @@ echo "DOCKER-COMPOSE"
 sudo git clone https://github.com/Disha-Parikh/JenkinsTest.git
 cd JenkinsTest
 pwd
+sudo docker-compose build
 sudo docker-compose up -d
 echo "DB"
 sudo docker logs jenkinstest_db_1
