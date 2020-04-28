@@ -3,7 +3,7 @@ sudo yum install git httpd -y
 sudo service docker start
 sudo service httpd start
 echo "DOCKER"
-aws ec2 describe-instances --instance-ids i-0c9c9b44b --query 'Reservations[*].Instances[*].PublicIpAddress' --output text
+aws ec2 describe-instances --instance-ids i-0c9c9b44b --query 'Reservations[*].Instances[*].PublicIpAddress' --region ap-south-1 --output text
 cat abcd.txt
 echo "?????"
 sudo service docker status
