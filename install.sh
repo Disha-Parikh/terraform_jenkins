@@ -17,6 +17,6 @@ sudo docker-compose up -d
 echo "SERVICES"
 sudo docker-compose ps --services
 echo "LOGS"
-sudo docker-compose logs web
+sudo docker-compose logs db
 sudo netstat -tnlp
 echo "END"
