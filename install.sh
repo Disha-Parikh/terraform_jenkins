@@ -19,7 +19,7 @@ sudo docker-compose ps --services
 echo "LOGS WEB"
 sudo docker-compose logs web
 echo "LOGS DB"
-sudo docker-compose db
+sudo docker-compose logs db
 sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
