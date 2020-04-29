@@ -19,4 +19,6 @@ sudo docker-compose ps --services
 echo "LOGS"
 sudo docker-compose logs db
 sudo netstat -tnlp
+echo "NETWORKS"
+sudo docker network ls
 echo "END"
