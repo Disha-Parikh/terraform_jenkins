@@ -23,6 +23,5 @@ sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
 echo "END"
-curl http://localhost:5002
 curl http://localhost:5432
 
