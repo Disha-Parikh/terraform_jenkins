@@ -19,6 +19,7 @@ echo "LOGS WEB"
 sudo docker-compose logs web
 echo "LOGS DB"
 sudo docker-compose logs postgres
+sudo docker-compose-restart
 sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
