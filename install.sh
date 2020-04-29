@@ -23,6 +23,5 @@ sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
 echo "END"
-curl http://0.0.0.0:5432
-curl http://0.0.0.0:5432
+
 
