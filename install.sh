@@ -1,7 +1,6 @@
 sudo amazon-linux-extras install docker  -y
-sudo yum install git httpd -y
+sudo yum install git -y
 sudo service docker start
-sudo service httpd start
 echo "DOCKER"
 echo "????"
 sudo service docker status
