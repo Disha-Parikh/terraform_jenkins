@@ -16,8 +16,10 @@ pwd
 sudo docker-compose up -d
 echo "SERVICES"
 sudo docker-compose ps --services
-echo "LOGS"
-sudo docker-compose logs db
+echo "LOGS WEB"
+sudo docker-compose logs web
+echo "LOGS DB"
+sudo docker-compose db
 sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
