@@ -20,8 +20,10 @@ sudo docker-compose logs web
 echo "LOGS DB"
 sudo docker-compose logs postgres
 value=$(pidof postgres | awk '{print $NF}')
+echo "VALUE"
+echo $value
 sudo kill -9 $value
-sudo docker-compose-restart postgres
+sudo docker-compose restart postgres
 sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
