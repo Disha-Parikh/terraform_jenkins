@@ -21,8 +21,7 @@ echo "LOGS DB"
 sudo docker-compose logs postgres
 value=$(pidof postgres | awk '{print $NF}')
 echo "VALUE"
-echo $value
-sudo kill -9 $value
+sudo killall postgres
 sudo docker-compose restart postgres
 sudo netstat -tnlp
 echo "NETWORKS"
