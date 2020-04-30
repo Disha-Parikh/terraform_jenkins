@@ -1,4 +1,5 @@
 sudo amazon-linux-extras install docker  -y
+sudo yum update -y
 sudo yum install git pidof -y
 sudo service docker start
 echo "DOCKER"
