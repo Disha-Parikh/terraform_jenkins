@@ -22,6 +22,7 @@ echo "LOGS DB"
 sudo docker-compose logs postgres
 sudo docker-compose stop postgres
 sudo docker-compose start postgres
+sudo docker-compose logs postgres
 echo "RESTART"
 sudo netstat -tnlp
 echo "NETWORKS"
