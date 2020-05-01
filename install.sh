@@ -20,13 +20,11 @@ echo "LOGS WEB"
 sudo docker-compose logs web
 echo "LOGS DB"
 sudo docker-compose logs postgres
-sudo docker-compose stop postgres
-sudo docker-compose start postgres
-sudo docker-compose logs postgres
 echo "RESTART"
 sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
 echo "END"
 curl localhost:5002
+top | grep python
 
