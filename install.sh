@@ -24,6 +24,9 @@ echo "RESTART"
 sudo netstat -tnlp
 sudo docker-compose stop web
 sudo docker-compose start web
+echo "post"
+sudo docker-compose logs web
+sudo netstat -tnlps
 echo "NETWORKS"
 sudo docker network ls
 echo "END it well"
