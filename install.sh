@@ -26,5 +26,4 @@ echo "NETWORKS"
 sudo docker network ls
 echo "END"
 curl localhost:5002
-top | grep python
 
