@@ -24,6 +24,6 @@ echo "RESTART"
 sudo netstat -tnlp
 echo "NETWORKS"
 sudo docker network ls
-echo "END"
+echo "END it well"
 curl localhost:5002
 
